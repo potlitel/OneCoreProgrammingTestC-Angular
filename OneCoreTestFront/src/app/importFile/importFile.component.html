@@ -1,0 +1,28 @@
+<div class="custom-container">
+  <div class="dataContainer">
+    <div class="excelData">
+     <h3 class="Titulo">Carga de Fichero excel</h3>
+      <table style="width: 90%;margin: auto;padding: 15px;">
+        <tbody>
+          <tr *ngFor="let row of data; let i1 = index">
+          <td *ngFor="let val of row; let i2 = index">
+            <div class="headerTable" *ngIf="i1 === 0">{{val}}</div>
+            <div style="text-align: center;" *ngIf="i2 < 3  && i1 > 0">{{val}}</div>
+            <div style="text-align: right;" *ngIf="i2 > 2 && i1 > 0">{{val | currency:'USD'}}</div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="uploadButton text-center">
+      <label for="file-upload" class="custom-file-upload">
+        Cargar fichero
+      </label>
+      <input id="file-upload" type="file" accept=".xls,.xlsx" (change)="onFileChange($event)" multiple="false" />
+    </div>
+    <div>
+      <button (click)="GuardarDatos()" class="btn btn-primary" [class.disabled]="!(cargado && excelValidado)">Guardar</button>
+    </div>
+  </div>
+  <button class="retornar" (click)="gotoInicio()">Retornar</button>
+</div>

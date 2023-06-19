@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Warning!</h2>
+<mat-dialog-content>
+  Your sesion is going to end in {{1 + 'min'}}
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button tabindex="-1" mat-flat-button class="btn-margin" (click)="onClose(true)" color="primary">Confirm</button>
+     <button tabindex="-1" mat-flat-button class="btn-margin" (click)="onClose(false)" color="primary">Cancel</button>
+</mat-dialog-actions>

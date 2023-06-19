@@ -1,0 +1,36 @@
+<div class="custom-container">
+  <div class="dataContainer">
+    <table style="width: 80%; margin-left: auto;margin-right: auto;">
+      <tr>
+        <td style="text-align: right;padding: 5px;">
+          <h3>Derjaya's Dev</h3>
+        </td>
+        <td style="text-align: left;padding: 5px;">
+          <h3>Test Mexico</h3>
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 33%;margin: auto;">
+          <button title="Gestionar clientes" (click)="gotoClientes()" class="btn btn-clientes"></button>
+        </td>
+        <td style="width: 33%;margin: auto;">
+          <button title="importar Excel con la información de las compras" (click)="gotoImportExcel()" class="btn btn-excel"></button>
+        </td>
+        <td style="width: 33%;margin: auto;">
+          <button title="Listar compras dado el ID del documento Excel con que se importo" (click)="gotoSearchExcel()" class="btn btn-buscar"></button>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">
+          <label>Gestionar Clientes</label>
+        </td>
+        <td style="text-align: center;">
+          <label >Importar Compras</label>
+        </td>
+        <td style="text-align: center;">
+          <label >Listar Compras</label>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  webapi:
+    image: onecore_webapidotnet
+    container_name: miwebapi_dotnetcore
+    restart: unless-stopped
+    ports:
+      - 8066:80
+    networks:
+      - networkapp
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    command: -H unix:///var/run/docker.sock
+    container_name: portainer-ce
+    restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=portainer.yourdomain.com
+      - VIRTUAL_PORT=9000
+    ports:
+        - 9443:9443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./docker/portainer_data:/data
+
+networks: 
+  networkapp:

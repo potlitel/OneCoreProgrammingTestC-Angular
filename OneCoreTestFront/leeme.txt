@@ -1,0 +1,25 @@
+instalar node 10.15.0 desde https://nodejs.org/download/release/v10.15.0/node-v10.15.0-x64.msi
+
+instalar angular 7.3.9 de forma global con este comando:
+
+	npm install -g @angular/cli@7.3.9
+	
+instalar visual studio code
+
+descompactar el proyecto que se envió en una carpeta de trabajo
+
+Abrir vscode
+
+  Ejecutar Opcion File/Open Folder
+  
+  Entrar en la carpeta donde descompactó el proyecto
+  
+  Ejecutar Opcion View/Terminal
+  
+  Se abre la terminal..se escribe npm install y se descargan las dependencias del proyecto en la carpeta node_modules
+  
+  Cuando termine se ejecuta ng serve para que arranque el proyecto
+  
+  En el navegador teclear http://localhost:4200
+  
+  

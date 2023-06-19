@@ -1,0 +1,22 @@
+<div class="custom-container">
+  <div class="dataContainer">
+    <div style="padding: 8px;">
+      <h3 class="Titulo">Listar Compras</h3>
+    </div>
+    <div *ngIf="!documentos">
+      <h3 style="margin-left: 35%;">No hay Compras guardadas</h3>
+    </div>
+    <div *ngIf="documentos" style="margin-left: 13%;">
+      <label>Seleccione la Compra</label>
+      <select style="margin-left: 20px;" (ngModelChange)="selectChange($event)" [(ngModel)]="selectedCompra" >
+        <option ngValue="null" disabled selected>Documento - Fecha</option>
+        <option *ngFor="let doc of documentos" [value]="doc.id">{{doc.id}} - {{doc.fecha | date: 'dd/MM/yyyy'}} </option>
+      </select>
+    </div>
+    <div class="text-center">
+      <button class="btn" [class.disabled]="!documentos" (click)="MostrarReporte()" >Mostrar Reporte</button>
+    </div>
+  </div>
+  <button class="retornar" (click)="gotoInicio()">Retornar</button>
+  <label class="nota">Nota: Los datos del Documento solicitado se mostrarán en un PDF</label>
+</div>

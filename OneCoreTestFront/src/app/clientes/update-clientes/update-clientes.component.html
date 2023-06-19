@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Actualizar Cliente</h2>
+<mat-dialog-content>
+  <form [formGroup]="fg" autocomplete="off">
+    <div class="row">
+      <div style="margin-bottom:10px">
+        <label style="margin-right: 16px;" for="nombre" class="form-label text-white">Nombre *</label>
+        <input [ngClass]="{ 'is-invalid': fg.get('nombre')?.invalid }"
+        inputUppercase formControlName="nombre" type="text" class="form-control form-height" id="nombre" placeholder="Nombre">
+      </div>
+      <div style="margin-bottom:10px">
+        <label style="margin-right: 40px;" for="rfc" class="form-label text-white">RFC *</label>
+        <input [ngClass]="{ 'is-invalid': fg.get('rfc')?.invalid }"
+        inputUppercase formControlName="rfc" type="text" class="form-control form-height" id="RFC" placeholder="RFC">
+      </div>
+      <div style="margin-bottom:10px">
+        <label for="direccion" class="form-label text-white">Direccion *</label>
+        <input style="margin-left: 7px;"
+        [ngClass]="{ 'is-invalid': fg.get('direccion')?.invalid }"
+        formControlName="direccion" type="text" class="form-control form-height" id="direccion" placeholder="Direccion">
+      </div>
+      <div style="margin-bottom:10px">
+        <label style="margin-right: 50px;" for="cp" class="form-label text-white">CP *</label>
+        <input
+        [ngClass]="{ 'is-invalid': fg.get('cp')?.invalid }"
+        formControlName="cp" type="text" class="form-control form-height" id="cp" placeholder="CP">
+      </div>
+      <div style="margin-bottom:10px">
+        <label style="margin-right: 29px;text-align: right;" for="email" class="form-label text-white">correo *</label>
+        <input [ngClass]="{ 'is-invalid': fg.get('email')?.invalid }"
+        formControlName="email" type="text" class="form-control form-height" id="email" placeholder="email">
+      </div>
+      <div class="col-12 text-center">
+        <p [hidden]=!fg.invalid>El campo CP no debe exceder los 3 caracteres. El campo correo debe ser válido</p>
+        <button style="margin-left: 150px;" [disabled]="fg.invalid" (click)="save()" class="btn btn-secondary mx-5 my-5">Guardar</button>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button style="margin-left: auto;" tabindex="-1" mat-flat-button class="btn-margin" (click)="onClose(true)" color="primary">Cerrar</button>
+</mat-dialog-actions>
